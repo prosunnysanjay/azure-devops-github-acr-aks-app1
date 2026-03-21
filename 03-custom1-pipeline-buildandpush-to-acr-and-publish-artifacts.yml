@@ -49,6 +49,7 @@ stages:
         Contents: '**'
         TargetFolder: '$(Build.ArtifactStagingDirectory)'
         OverWrite: true
+    - powershell: Write-Host "Contents:" Get-ChildItem -Recurse $(Build.ArtifactStagingDirectory)
     # Task-3: Publish build artifacts (Publish build to Azure Pipelines)
     - task: PublishBuildArtifacts@1
       inputs:
